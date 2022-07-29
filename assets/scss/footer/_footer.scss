@@ -1,0 +1,12 @@
+@use "../settings/colors" as color;
+
+.footer {
+  margin-top: 1rem;
+  text-align: center;
+  color: color.$secondary-color;
+
+  .attribution__link {
+    color: color.$secondary-color;
+    text-decoration: none;
+  }
+}

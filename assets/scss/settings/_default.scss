@@ -1,0 +1,7 @@
+@use "./colors" as color;
+
+body {
+  padding: 2rem;
+  font-family: 'Dosis', sans-serif;
+  background-color: color.$primary-color;
+}

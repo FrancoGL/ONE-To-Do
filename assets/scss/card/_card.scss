@@ -1,0 +1,26 @@
+@use "../settings/colors" as color;
+@use "./card__body";
+@use "./card__list";
+
+.main__card {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 1rem;
+  background-color: color.$secondary-color;
+  border-radius: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .main__card {
+    width: 50vw;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main__card {
+    width: 40%;
+    margin: 0 auto;
+  }
+}

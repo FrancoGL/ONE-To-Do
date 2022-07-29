@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO App</title>
+    <link rel="icon" type="image/png" href="assets/img/rocket.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/scss/pages/index.css">
+  </head>
+  <body>
+    <main>
+      <section class="main__card">
+        <div class="card__title"><img src="assets/img/rocket.svg" /></div>
+        <div class="card__body">
+          <form action="" class="body__form">
+            <input
+              type="text"
+              name="task"
+              placeholder="Nombre de la tarea"
+              class="form__input"
+              autocomplete="off"
+              data-form-input
+            />
+            <button type="submit" class="form__btn" data-form-btn>
+              Agregar <i class="fas fa-plus-circle"></i>
+            </button>
+          </form>
+        </div>
+        <ul class="card__list">
+          <template id="li__template">
+            <li class="list__item">
+              <i class="fa-regular fa-square-check fa-xl"></i>
+              <p class="item__text"></p>
+              <div class="list__options">
+                <i class="fa-solid fa-pen"></i>
+                <i class="fa-solid fa-trash"></i>
+              </div>
+            </li>
+          </template>
+        </ul>
+      </section>
+      <footer class="footer">
+        <p class="attribution">Develop by <a href="#" class="attribution__link">FrancoGL</a></p>
+      </footer>
+    </main>
+    <script src="https://kit.fontawesome.com/4a2b2b8d6e.js" crossorigin="anonymous"></script>
+    <script type="module" src="./assets/javascript/page/index.js"></script>
+  </body>
+</html>

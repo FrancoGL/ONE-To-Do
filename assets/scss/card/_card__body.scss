@@ -1,0 +1,71 @@
+@use "../settings/colors" as color;
+
+.card__body {
+  margin: 1rem 0 2rem 0;
+
+  .body__form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .form__input {
+      padding: 0.5rem;
+      border: 2px solid #eee;
+      border-radius: 1rem;
+      text-align: center;
+    }
+
+    .form__input:focus {
+      outline: 1px solid color.$third-color;
+    }
+
+    .form__btn {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(45deg, color.$fourth-color, color.$fifth-color);
+      color: #fff;
+      border-radius: 0.5rem;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card__body {
+    width: 100%;
+
+    .body__form {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+
+      .form__input {
+        width: 65%;
+      }
+
+      .form__btn {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card__body {
+    width: 100%;
+
+    .body__form {
+      flex-flow: row nowrap;
+      justify-content: space-around;
+
+      .form__input {
+        width: 65%;
+      }
+
+      .form__btn {
+        margin: 0;
+        cursor: pointer;
+      }
+    }
+  }
+}

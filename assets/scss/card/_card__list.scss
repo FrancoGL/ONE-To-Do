@@ -1,0 +1,30 @@
+@use "../settings/colors" as color;
+
+.card__list {
+  width: 93%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  .list__item {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border: 2px solid color.$sixth-color;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+
+    .list__options {
+      display: inline;
+      color: color.$fifth-color;
+
+      .fa-pen {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
