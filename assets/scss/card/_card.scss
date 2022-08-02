@@ -1,6 +1,7 @@
 @use "../settings/colors" as color;
 @use "./card__body";
 @use "./card__list";
+@use "./container";
 
 .main__card {
   display: flex;
@@ -13,14 +14,14 @@
 
 @media screen and (min-width: 768px) {
   .main__card {
-    width: 50vw;
+    width: 80vw;
     margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .main__card {
-    width: 40%;
+    width: 50%;
     margin: 0 auto;
   }
 }
