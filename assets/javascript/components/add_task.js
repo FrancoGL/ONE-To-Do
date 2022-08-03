@@ -1,10 +1,9 @@
 import {saveOnLocal} from "./save_on_local.js";
-import {noteObject} from "./note_object.js";
+import {taskObject} from "./task_object.js";
 import {addSingleTask} from "./create_task.js";
 
 /**
- * Function that adds one task.
- * The task is added to the HTML and saved in an array
+ * Function that adds one task and save a task in localStorage
  */
 export const addTask = () => {
     const $input = document.querySelector(".form__input");
@@ -12,11 +11,11 @@ export const addTask = () => {
 
     if ($input.value !== "") {
         // Set task object
-        const taskObject = noteObject($input.value, $date.valueAsNumber)
+        const task = taskObject($input.value, $date.valueAsNumber)
         // Save task in localStorage
-        saveOnLocal(taskObject)
+        saveOnLocal(task)
         // Add a single task
-        addSingleTask(taskObject)
+        addSingleTask(task)
         // Clear input
         $input.value = ""
     }

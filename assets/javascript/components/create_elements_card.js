@@ -1,3 +1,8 @@
+/**
+ * Return container for li elements
+ * @param date
+ * @returns {HTMLDivElement}
+ */
 export const createContainer = (date) => {
     const $container = document.createElement("div")
     $container.classList.add("container")
@@ -11,6 +16,11 @@ export const createContainer = (date) => {
     return $container
 }
 
+/**
+ * Return li element
+ * @param text
+ * @returns {HTMLLIElement}
+ */
 export const createLiItem = (text) => {
     const $liItem = document.createElement("li")
     $liItem.classList.add("list__item")

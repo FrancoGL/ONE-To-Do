@@ -1,8 +1,8 @@
 /**
- * Default object to note
+ * Task object
  * @returns {{date: number, id: number, completed: boolean, value: string}}
  */
-export const noteObject = (value, date) => {
+export const taskObject = (value, date) => {
 
     return {
         id: Math.floor(Math.random() * 1000),

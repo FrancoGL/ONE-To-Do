@@ -1,19 +1,14 @@
 @use "../settings/colors" as color;
 
 .card__list {
-  width: 93%;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+  width: 100%;
+
 
   .list__item {
-    padding: 1rem;
+    padding: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: inherit;
     border: 2px solid color.$sixth-color;
     border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
@@ -25,6 +20,14 @@
       .fa-pen {
         margin-right: 0.5rem;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .card__list {
+    .list__item {
+      width: 80%;
     }
   }
 }
