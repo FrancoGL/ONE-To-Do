@@ -3,7 +3,7 @@
  * @param date
  * @returns {HTMLDivElement}
  */
-export const createContainer = (date) => {
+const createContainer = (date) => {
     const $container = document.createElement("div")
     $container.classList.add("container")
     const $containerHeader = document.createElement("h3")
@@ -18,10 +18,10 @@ export const createContainer = (date) => {
 
 /**
  * Return li element
- * @param text
+ * @param task {object}
  * @returns {HTMLLIElement}
  */
-export const createLiItem = (text) => {
+const createLiItem = (task) => {
     const $liItem = document.createElement("li")
     $liItem.classList.add("list__item")
 
@@ -32,7 +32,7 @@ export const createLiItem = (text) => {
 
     const $itemText = document.createElement("p")
     $itemText.classList.add("item__text")
-    $itemText.textContent = text
+    $itemText.textContent = task.value
 
     $liItem.appendChild($itemText)
 
@@ -41,8 +41,10 @@ export const createLiItem = (text) => {
 
     const $editIcon = document.createElement("i")
     const $deleteIcon = document.createElement("i")
-    $editIcon.classList.add("fa-solid", "fa-pen")
-    $deleteIcon.classList.add("fa-solid", "fa-trash")
+    $editIcon.classList.add("fa-solid", "fa-pen", "btn--update")
+    $deleteIcon.classList.add("fa-solid", "fa-trash", "btn--delete")
+    $editIcon.dataset.id = task.id
+    $deleteIcon.dataset.id = task.id
 
     $listOptions.appendChild($editIcon)
     $listOptions.appendChild($deleteIcon)
@@ -50,4 +52,9 @@ export const createLiItem = (text) => {
     $liItem.appendChild($listOptions)
 
     return $liItem
+}
+
+export const createElementService = {
+    createContainer,
+    createLiItem
 }

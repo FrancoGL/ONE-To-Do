@@ -1,6 +1,6 @@
-import {saveOnLocal} from "./save_on_local.js";
+import {saveOrUpdateInLocalService} from "./save_update_in_local.js";
 import {taskObject} from "./task_object.js";
-import {addSingleTask} from "./create_task.js";
+import {createTaskService} from "./create_task.js";
 
 /**
  * Function that adds one task and save a task in localStorage
@@ -13,9 +13,9 @@ export const addTask = () => {
         // Set task object
         const task = taskObject($input.value, $date.valueAsNumber)
         // Save task in localStorage
-        saveOnLocal(task)
+        saveOrUpdateInLocalService.saveOneTaskOnLocal(task)
         // Add a single task
-        addSingleTask(task)
+        createTaskService.addSingleTask(task)
         // Clear input
         $input.value = ""
     }
