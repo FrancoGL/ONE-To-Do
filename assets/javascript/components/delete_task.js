@@ -1,7 +1,8 @@
 import {saveOrUpdateInLocalService} from "./save_update_in_local.js";
+import {getTaskService} from "./get_tasks.js";
 
 export const deleteTask = (id) => {
-    const tasks = JSON.parse(localStorage.getItem("tasks") || [])
+    const tasks = getTaskService.getTasksParsed()
 
     let elementIndex = tasks.findIndex( task => task.id === parseInt(id))
 

@@ -1,5 +1,5 @@
 import {formatDate} from "../utils/format_date.js";
-import {getTasksDates} from "./get_tasks_date.js";
+import {getTaskService} from "./get_tasks.js";
 import {createElementService} from "./create_elements_card.js";
 
 /**
@@ -27,10 +27,10 @@ const addSingleTask = (task) => {
  * Load all tasks when the page is loaded
  */
 const loadAllTask = () => {
-    const tasks = JSON.parse(localStorage.getItem("tasks") || []);
+    const tasks = getTaskService.getTasksParsed()
     const $cardList = document.querySelector(".card__list"); // parent
     const $fragment = document.createDocumentFragment();
-    const tasksDateCollection = getTasksDates()
+    const tasksDateCollection = getTaskService.getTasksDates()
 
     tasksDateCollection.forEach(date => {
 

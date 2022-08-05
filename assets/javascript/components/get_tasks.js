@@ -1,5 +1,5 @@
-export const getTasksDates = () => {
-    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+const getTasksDates = () => {
+    const tasks = getTasksParsed()
     const tasksDates = []
     if (tasks.length > 0) {
 
@@ -12,4 +12,13 @@ export const getTasksDates = () => {
 
         return tasksDates;
     }
+}
+
+const getTasksParsed = () => {
+    return JSON.parse(localStorage.getItem("tasks") || [])
+}
+
+export const getTaskService = {
+    getTasksDates,
+    getTasksParsed
 }

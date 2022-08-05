@@ -1,9 +1,10 @@
+import {getTaskService} from "./get_tasks.js";
 /**
  * Save one task in LocalStorage
  * @param task object that contain all data to store
  */
 const saveOneTask = (task) => {
-    const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    const tasks = getTaskService.getTasksParsed()
 
     tasks.push(task)
 
