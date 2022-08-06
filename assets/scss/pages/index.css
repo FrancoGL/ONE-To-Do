@@ -88,6 +88,9 @@ body {
 .card__list .list__item .list__options .fa-pen {
   margin-right: 0.5rem;
 }
+.card__list .list__item .active {
+  color: #09A129;
+}
 
 @media screen and (min-width: 768px) {
   .card__list .list__item {

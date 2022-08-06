@@ -34,7 +34,31 @@ const updateTask = (id) => {
     saveOrUpdateInLocalService.updateTaskCollection(tasks)
 }
 
+const updateState = (id) => {
+    const tasks = getTaskService.getTasksParsed()
+    const $checkState = document.querySelector(`[data-id='${id}']`)
+    // Change visual state
+    if ($checkState.classList.contains("fa-regular")) {
+        $checkState.classList.replace("fa-regular", "fa-solid")
+    } else {
+        $checkState.classList.replace("fa-solid", "fa-regular")
+    }
+    $checkState.classList.toggle("active")
+
+    // Change internal state
+    tasks.forEach(task => {
+        if (task.id === parseInt(id)) {
+            let state = task.completed;
+            task.completed = !state
+        }
+    })
+
+    // Save
+    saveOrUpdateInLocalService.updateTaskCollection(tasks)
+}
+
 export const updateServices = {
-    updateAction: setupUpdate,
-    setUpdate: updateTask
+    setupUpdate,
+    updateTask,
+    updateState
 }

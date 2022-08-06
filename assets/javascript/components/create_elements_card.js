@@ -26,7 +26,12 @@ const createLiItem = (task) => {
     $liItem.classList.add("list__item")
 
     const $checkIcon = document.createElement("i")
-    $checkIcon.classList.add("fa-regular", "fa-square-check", "fa-xl")
+    if (task.completed) {
+        $checkIcon.classList.add("fa-solid", "fa-square-check", "fa-xl", "item--state", "active")
+    } else {
+        $checkIcon.classList.add("fa-regular", "fa-square-check", "fa-xl", "item--state")
+    }
+    $checkIcon.dataset.id = task.id
 
     $liItem.appendChild($checkIcon)
 
