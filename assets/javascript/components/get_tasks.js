@@ -15,7 +15,12 @@ const getTasksDates = () => {
 }
 
 const getTasksParsed = () => {
-    return JSON.parse(localStorage.getItem("tasks") || [])
+    const tasks = localStorage.getItem("tasks") || []
+    if (tasks.length > 0) {
+        return JSON.parse(tasks)
+    } else {
+        return tasks
+    }
 }
 
 export const getTaskService = {
